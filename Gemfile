@@ -9,8 +9,8 @@ gem "rails", "~> 7.0.4"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -31,7 +31,8 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
+gem "redis"
+# gem "hiredis"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -71,9 +72,24 @@ group :test do
   gem "webdrivers"
 end
 
-
 gem "stimulus_reflex", "~> 3.5.pre9"
 
 gem "cable_ready", "~> 5.0.pre9"
 
 gem "devise", "~> 4.8"
+
+gem "net-ftp"
+
+gem "pry", "~> 0.14.1"
+
+gem "pagy", "~> 5.10"
+
+gem "view_component", "~> 2.61"
+
+gem "kramdown", "~> 2.4"
+
+gem "gemoji", "~> 3.0"
+
+gem "rinku", "~> 2.0"
+
+gem "friendly_id", "~> 5.4"

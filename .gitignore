@@ -36,3 +36,5 @@
 *.sw*
 
 /node_modules/
+
+*.sqlite3

@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require "action_cable/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -18,5 +19,9 @@ module Bsdports
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    if Rails.env.development?
+      config.web_console.whiny_requests = false
+    end
   end
 end

@@ -1,8 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_controller.default_url_options = {host: "localhost", port: 3000}
-  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+  config.action_controller.default_url_options = {host: "localhost", port: 3069}
+  config.action_mailer.default_url_options = {host: "localhost", port: 3069}
 
   config.session_store :cache_store
 
@@ -70,4 +70,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # config.cache_store = :redis_cache_store, {driver: :hiredis, url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" }}
+
+  config.cache_store = :redis_cache_store
+  config.session_store :cache_store, key: "_session_development", compress: true, pool_size: 5, expire_after: 1.year
 end

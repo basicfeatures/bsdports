@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+# GENERATES TLS-CERTIFICATES AND CRONTABS
+
+list=(
+  "bsdports.net"
+  "bsdports.org"
+)
+
+for domain in $list; do
+  acme-client -v $domain
+
+  # Check for cert once a week
+  # Format: minute hour day-of-month month day-of-week
+  (crontab -l; echo "~ ~ * * ~ acme-client $domain && rcctl reload relayd") | crontab -
+
+  sleep 12
+done
+

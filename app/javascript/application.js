@@ -1,3 +1,10 @@
-// Entry point for the build script in your package.json
 import "@hotwired/turbo-rails"
+import "./channels"
 import "./controllers"
+
+import "./jquery"
+
+$(document).on("turbo:load", function() {
+  // console.log("Hello World!");
+});
+
