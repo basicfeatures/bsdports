@@ -75,3 +75,5 @@ end
 gem "stimulus_reflex", "~> 3.5.pre9"
 
 gem "cable_ready", "~> 5.0.pre9"
+
+gem "devise", "~> 4.8"
