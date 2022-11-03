@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_19_211649) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_19_211751) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -28,5 +28,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_19_211649) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ports", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "category_id", null: false
+    t.string "author"
+    t.integer "os_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_ports_on_category_id"
+    t.index ["os_id"], name: "index_ports_on_os_id"
+  end
+
   add_foreign_key "categories", "os", column: "os_id"
+  add_foreign_key "ports", "categories"
+  add_foreign_key "ports", "os", column: "os_id"
 end
