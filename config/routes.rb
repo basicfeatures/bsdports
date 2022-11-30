@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :ports
+  resources :categories
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "ports#index"
+
+  devise_for :users
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => "/cable"
 end
+

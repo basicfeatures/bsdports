@@ -1,0 +1,21 @@
+$ORIGIN bsdports.org.
+$TTL 24h
+
+@ 1h IN SOA ns.bsdports.net. admin.bsdports.net. (
+  2022101701 ; Serial YYYYMMDDnn
+  1h         ; Refresh
+  15m        ; Retry
+  1w         ; Expire
+  3m         ; Minimum TTL
+)
+
+@ IN NS ns.bsdports.net.
+@ IN NS ns.hyp.net.
+
+www IN CNAME @
+
+@ IN A 209.250.248.67
+
+; https://letsencrypt.org/docs/caa/
+bsdports.org. 3m IN CAA 0 issue "letsencrypt.org"
+

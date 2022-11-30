@@ -1,0 +1,9 @@
+<% ports.each do |port| %>
+  <%= link_to port do %>
+    <%= tag.h2 port.name %>
+    <%#= tag.h3 port.category %>
+    <%= tag.p port.author %>
+    <%= timeago port.created_at %>
+  <% end %>
+<% end %>
+
