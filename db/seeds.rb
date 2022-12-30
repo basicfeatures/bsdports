@@ -1,4 +1,4 @@
-Os.create([
+Platform.create([
   {
     name: "OpenBSD",
     url: "https://openbsd.org/"
@@ -10,6 +10,10 @@ Os.create([
   {
     name: "NetBSD",
     url: "https://netbsd.org/"
+  },
+  {
+    name: "macOS",
+    url: "https://apple.com/macos/ventura/"
   }
 ])
 

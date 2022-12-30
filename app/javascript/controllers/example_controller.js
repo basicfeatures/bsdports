@@ -89,3 +89,4 @@ export default class extends ApplicationController {
   //   element.innerText = 'Now, the cleanup can begin!'
   // }
 }
+

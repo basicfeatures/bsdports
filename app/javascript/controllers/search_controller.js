@@ -3,6 +3,7 @@ import ApplicationController from "./application_controller"
 export default class extends ApplicationController {
   search(event) {
     clearTimeout(this.timeout)
+
     this.timeout = setTimeout(() => {
       this.stimulate("Search#search", event.target.value)
     }, 200)
@@ -11,6 +12,8 @@ export default class extends ApplicationController {
   reset(event) {
     event.preventDefault()
     this.stimulate("Search#search")
+
+    document.getElementById("search").classList.remove("active")
   }
 
   beforeSearch() {
@@ -33,6 +36,8 @@ export default class extends ApplicationController {
 
   get List() {
     return document.getElementById("live_results")
+
+    document.getElementById("search").classList.add("active")
   }
 }
 

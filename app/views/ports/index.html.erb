@@ -1,24 +1,11 @@
-
-
 <main>
   <%= tag.h1 "bsdports.net", class: "logo" %>
-  <div data-controller="search" id="search">
-    <%= form_with(method: :get) do |form| %>
-      <%= form.text_field :query, data: { action: "input->search#search" }, autocomplete: "off", value: params[:query], placeholder: "Search #{ Port.all.count } ports in #{ Category.all.count } categories..." %>
-    <% end %>
-    <div id="reset_link">
-      <%= render partial: "ports/reset_link", query: params[:query] %>
-    </div>
-    <div id="live_results">
-    </div>
-  </div>
-
-  <p class="updated_at">Updated <%= timeago Port.last.updated_at %> ago</p>
-  <% if cookies[:theme] == "light" %>
-    <%= link_to t("dark_mode"), root_path(theme: "dark"), class: "dark" %>
+  <%= render partial: "shared/search" %>
+  <p class="updated_at">Updated <%= time_ago_in_words Port.last.updated_at %> ago</p>
+  <% if cookies[:theme] == "light_mode" %>
+    <%= link_to t("light_mode"), root_path(theme: "light_mode"), class: "light_mode_link" %>
   <% else %>
-    <%= link_to t("light_mode"), root_path(theme: "light"), class: "light" %>
+    <%= link_to t("dark_mode"), root_path(theme: "dark_mode"), class: "dark_mode_link" %>
   <% end %>
-
 </main>
 

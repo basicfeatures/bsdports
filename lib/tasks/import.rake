@@ -53,14 +53,14 @@ namespace :import do
     end
   end
 
-  def go_fetch(os, server, root, tgz)
+  def go_fetch(platform, server, root, tgz)
     # binding.pry
 
     ftp = Net::FTP.new(server)
     ftp.login
     ftp.chdir(root)
 
-    puts "Downloading #{ tgz } for #{ os }..."
+    puts "Downloading #{ tgz } for #{ platform }..."
 
     ftp.getbinaryfile(tgz)
     ftp.close
@@ -72,12 +72,12 @@ namespace :import do
     untar(io, ".")
 
     # Cleanup folders
-    if os == ["OpenBSD", "NetBSD"]
+    if platform == ["OpenBSD", "NetBSD"]
       FileUtils.rm_rf(Dir.glob("./ports/CVS"))
       FileUtils.rm_rf(Dir.glob("./ports/*/CVS"))
     end
 
-    if os == "FreeBSD"
+    if platform == "FreeBSD"
       FileUtils.rm_rf(Dir.glob("./ports/Mk"))
       FileUtils.rm_rf(Dir.glob("./ports/Templates"))
       FileUtils.rm_rf(Dir.glob("./ports/Tools"))
@@ -91,7 +91,7 @@ namespace :import do
 
         new_category = Category.create!(
           name: category,
-          os: Os.find_by_name(os)
+          platform: Platform.find_by_name(platform)
         )
 
         if new_category.valid?
@@ -134,7 +134,7 @@ namespace :import do
             url: url,
             description: description,
             category: Category.find_by_name(category),
-            os: Os.find_by_name(os)
+            platform: Platform.find_by_name(platform)
           )
 
           if new_port.valid?
@@ -147,7 +147,7 @@ namespace :import do
     # Cleanup
     FileUtils.rm_rf(Dir.glob("./ports*"))
 
-    if os == "NetBSD"
+    if platform == "NetBSD"
       FileUtils.rm_rf(Dir.glob("./*.data"))
       FileUtils.rm_rf(Dir.glob("./*.paxheader"))
       FileUtils.rm_rf(Dir.glob("./*.pax_global_header"))

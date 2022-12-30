@@ -18,13 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_20_051847) do
     t.string "name"
     t.string "url"
     t.string "summary"
-    t.bigint "os_id", null: false
+    t.bigint "platform_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["os_id"], name: "index_categories_on_os_id"
+    t.index ["platform_id"], name: "index_categories_on_platform_id"
   end
 
-  create_table "os", force: :cascade do |t|
+  create_table "platforms", force: :cascade do |t|
     t.string "name"
     t.string "url"
     t.datetime "created_at", null: false
@@ -38,11 +38,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_20_051847) do
     t.text "description"
     t.string "author"
     t.bigint "category_id", null: false
-    t.bigint "os_id", null: false
+    t.bigint "platform_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_ports_on_category_id"
-    t.index ["os_id"], name: "index_ports_on_os_id"
+    t.index ["platform_id"], name: "index_ports_on_platform_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_20_051847) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "os", column: "os_id"
+  add_foreign_key "categories", "platforms"
   add_foreign_key "ports", "categories"
-  add_foreign_key "ports", "os", column: "os_id"
+  add_foreign_key "ports", "platforms"
 end

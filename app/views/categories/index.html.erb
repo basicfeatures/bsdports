@@ -1,6 +1,5 @@
 <%= render partial: "shared/header" %>
 <main>
-  <%= tag.div class: "mascot freebsd" %>
   <div data-controller="search" id="search">
     <%= form_with(method: :get) do |form| %>
       <%= form.text_field :query, data: { action: "input->search#search" }, autocomplete: "off", value: params[:query], placeholder: "Search #{ Port.all.count } ports in #{ Category.all.count } categories..." %>
@@ -10,7 +9,8 @@
     <%= render "ports/reset_link", query: params[:query] %>
   </div>
   <%= render "ports/list", ports: @ports %>
-  <p class="updated_date">Updated <%= timeago Port.last.updated_at %></p>
+  <p class="updated_date">Updated <%= time_ago_in_words Port.last.updated_at %></p>
 </main>
 <%= render partial: "shared/footer" %>
  
+

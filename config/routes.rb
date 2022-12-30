@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  resources :ports
-  resources :categories
+  resources :platforms do
+    resources :categories do
+      resources :ports
+    end
+  end
 
   root "ports#index"
 
   devise_for :users
 
-  # Serve websocket cable requests in-process
+  # WebSockets w/ relayd(8)
   mount ActionCable.server => "/cable"
 end
 

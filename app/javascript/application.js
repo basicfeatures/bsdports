@@ -5,6 +5,11 @@ import "./controllers"
 import "./jquery"
 
 $(document).on("turbo:load", function() {
-  // console.log("Hello World!");
+  $("#search input").on("focus blur", function() {
+    $(this)
+      .parent()
+      .parent()
+      .toggleClass("focus");
+  });
 });
 

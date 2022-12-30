@@ -20,6 +20,7 @@
     rails import:openbsd
     rails import:freebsd
     rails import:netbsd
+    rails import:macosx
 
 ### JS, CSS and images
 

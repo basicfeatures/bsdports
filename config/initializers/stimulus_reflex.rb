@@ -52,3 +52,4 @@ StimulusReflex.configure do |config|
   # config.middleware.use FirstRackMiddleware
   # config.middleware.use SecondRackMiddleware
 end
+

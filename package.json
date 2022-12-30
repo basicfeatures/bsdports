@@ -12,7 +12,7 @@
     "jquery": "^3.6.1",
     "sass": "^1.55.0",
     "stimulus-carousel": "^4.0.0",
-    "stimulus-timeago": "^4.0.1",
+    "stimulus-use": "^0.51.1",
     "stimulus_reflex": "^3.5.0-pre9",
     "swiper": "^8.4.4"
   },

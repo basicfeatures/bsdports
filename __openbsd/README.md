@@ -15,8 +15,6 @@ Copy over config files:
 
 Install [pf-badhost](https://www.geoghegan.ca/pub/pf-badhost/latest/install/openbsd.txt).
 
-IPv4 addresses in table: 614714443
-
 ### PostgreSQL
 
     pkg_add postgresql-server

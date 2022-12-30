@@ -93,3 +93,4 @@ gem "gemoji", "~> 3.0"
 gem "rinku", "~> 2.0"
 
 gem "friendly_id", "~> 5.4"
+

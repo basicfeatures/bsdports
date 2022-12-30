@@ -34,3 +34,4 @@ class ExampleReflex < ApplicationReflex
   # Learn more at: https://docs.stimulusreflex.com/rtfm/reflex-classes
 
 end
+

@@ -17,3 +17,4 @@ class ApplicationReflex < StimulusReflex::Reflex
   # For code examples, considerations and caveats, see:
   # https://docs.stimulusreflex.com/rtfm/patterns#internationalization
 end
+

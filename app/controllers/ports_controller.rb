@@ -5,17 +5,6 @@ class PortsController < ApplicationController
   def index
     @ports = Port.where("name LIKE ?", "%#{ params[:query] }%")
     @categories ||= Category.where("name LIKE ?", "%#{ params[:query] }%")
-
-    # @pagy, @ports = pagy(
-    #   Port.where("name LIKE ?", "%#{ params[:query] }%")
-    #     .order(created_at: :desc)
-    #   items: 6
-    # )
-
-    # respond_to do |format|
-    #   format.html # GET
-    #   format.turbo_stream # POST
-    # end
   end
 
   # GET /ports/1 or /ports/1.json
@@ -80,3 +69,4 @@ class PortsController < ApplicationController
       params.require(:port).permit(:name, :description, :summary, :url, :category_id)
     end
 end
+

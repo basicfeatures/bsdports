@@ -105,11 +105,6 @@ concat-map@0.0.1:
   resolved "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
-date-fns@^2.29.3:
-  version "2.29.3"
-  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.29.3.tgz"
-  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
-
 dom7@^4.0.2, dom7@^4.0.4:
   version "4.0.4"
   resolved "https://registry.npmjs.org/dom7/-/dom7-4.0.4.tgz"
@@ -288,6 +283,11 @@ glob@^7.2.0:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+hotkeys-js@>=3:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.10.1.tgz#0c67e72298f235c9200e421ab112d156dc81356a"
+  integrity sha512-mshqjgTqx8ee0qryHvRgZaZDxTwxam/2yTQmQlqAWS3+twnq1jsY9Yng9zB7lWq6WRrjTbTOc7knNwccXQiAjQ==
+
 immutable@^4.0.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/immutable/-/immutable-4.1.0.tgz"
@@ -402,12 +402,12 @@ stimulus-carousel@^4.0.0:
   dependencies:
     swiper "^7.4.1"
 
-stimulus-timeago@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/stimulus-timeago/-/stimulus-timeago-4.0.1.tgz#6808362ade900d4b7b06d0ed067b23ab7e8967e5"
-  integrity sha512-XwBre54Q0J+K87MessbGczCIF2seTg77NiEAmJyphNIbc+Keo/LnB5hH31tNJStyF/XsfW18wwCzy6UnT0opqg==
+stimulus-use@^0.51.1:
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.51.1.tgz#55e775eee26d583ee4bdb4427d58979885408ebe"
+  integrity sha512-e7yEDHWz1GrDWwTc1y1Nnz62HPjELRAfn5q1JSCpTj1wHCCs4NNRUR14oZ08xxlp/4bjrgApMOKRkMPKA2TmVg==
   dependencies:
-    date-fns "^2.29.3"
+    hotkeys-js ">=3"
 
 stimulus_reflex@^3.5.0-pre9:
   version "3.5.0-pre9"
